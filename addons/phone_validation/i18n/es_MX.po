@@ -13,12 +13,12 @@ msgstr ""
 "POT-Creation-Date: 2020-09-01 07:29+0000\n"
 "PO-Revision-Date: 2020-09-07 08:16+0000\n"
 "Last-Translator: Lucia Pacheco <lpo@odoo.com>, 2021\n"
-"Language-Team: Spanish (Mexico) (https://www.transifex.com/odoo/teams/41243/es_MX/)\n"
+"Language-Team: Spanish (Mexico) (https://app.transifex.com/odoo/teams/41243/es_MX/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
 "Language: es_MX\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=3; plural=n == 1 ? 0 : n != 0 && n % 1000000 == 0 ? 1 : 2;\n"
 
 #. module: phone_validation
 #: code:addons/phone_validation/models/phone_blacklist.py:0
@@ -150,7 +150,7 @@ msgstr "Seguidores (Canales)"
 #: model:ir.model.fields,field_description:phone_validation.field_mail_thread_phone__message_partner_ids
 #: model:ir.model.fields,field_description:phone_validation.field_phone_blacklist__message_partner_ids
 msgid "Followers (Partners)"
-msgstr "Seguidores (Contactos)"
+msgstr "Seguidores (Partners)"
 
 #. module: phone_validation
 #: model:ir.model.fields,field_description:phone_validation.field_mail_thread_phone__id
@@ -176,7 +176,8 @@ msgstr ""
 #: model:ir.model.fields,help:phone_validation.field_phone_blacklist__message_has_error
 msgid "If checked, some messages have a delivery error."
 msgstr ""
-"Si se encuentra seleccionado, algunos mensajes tienen un error de entrega."
+"Si se encuentra seleccionado, algunos mensajes presentan un error de "
+"entrega."
 
 #. module: phone_validation
 #: model:ir.model.fields,help:phone_validation.field_mail_thread_phone__phone_sanitized_blacklisted
@@ -259,7 +260,7 @@ msgstr "Última actualización el"
 #: model:ir.model.fields,field_description:phone_validation.field_mail_thread_phone__message_main_attachment_id
 #: model:ir.model.fields,field_description:phone_validation.field_phone_blacklist__message_main_attachment_id
 msgid "Main Attachment"
-msgstr "Adjuntos principales"
+msgstr "Archivos adjuntos principales"
 
 #. module: phone_validation
 #: model:ir.model.fields,field_description:phone_validation.field_mail_thread_phone__message_has_error

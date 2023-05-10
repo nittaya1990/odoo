@@ -14,9 +14,11 @@
 # Hau Dao <hau@quartile.co>, 2020
 # Martin Trigaux, 2020
 # Norimichi Sugimoto <norimichi.sugimoto@tls-ltd.co.jp>, 2020
-# Yoshi Tashiro (Quartile) <tashiro@roomsfor.hk>, 2020
 # Noma Yuki, 2020
 # Tsuda Ryoko <ryoko04nov@gmail.com>, 2021
+# Yoshi Tashiro (Quartile) <tashiro@roomsfor.hk>, 2022
+# Ryoko Tsuda <ryoko@quartile.co>, 2023
+# Andy Yiu, 2023
 # 
 msgid ""
 msgstr ""
@@ -24,8 +26,8 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-11-27 14:12+0000\n"
 "PO-Revision-Date: 2020-09-07 08:16+0000\n"
-"Last-Translator: Tsuda Ryoko <ryoko04nov@gmail.com>, 2021\n"
-"Language-Team: Japanese (https://www.transifex.com/odoo/teams/41243/ja/)\n"
+"Last-Translator: Andy Yiu, 2023\n"
+"Language-Team: Japanese (https://app.transifex.com/odoo/teams/41243/ja/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
@@ -395,7 +397,7 @@ msgstr "属性"
 #. module: product
 #: model_terms:ir.ui.view,arch_db:product.product_pricelist_view
 msgid "Availability"
-msgstr "開始可能日"
+msgstr "利用可能"
 
 #. module: product
 #: model:ir.model.fields,field_description:product.field_product_packaging__barcode
@@ -449,7 +451,7 @@ msgstr "ドア付きキャビネット"
 #: model:ir.model.fields,field_description:product.field_product_product__can_image_1024_be_zoomed
 #: model:ir.model.fields,field_description:product.field_product_template__can_image_1024_be_zoomed
 msgid "Can Image 1024 be zoomed"
-msgstr ""
+msgstr "画像1024はズームできますか"
 
 #. module: product
 #: model:ir.model.fields,field_description:product.field_product_product__can_image_variant_1024_be_zoomed
@@ -990,7 +992,7 @@ msgstr "一般情報"
 #: model:ir.actions.server,name:product.action_product_price_list_report
 #: model:ir.actions.server,name:product.action_product_template_price_list_report
 msgid "Generate Pricelist"
-msgstr ""
+msgstr "価格表を生成"
 
 #. module: product
 #: model:ir.model.fields,help:product.field_product_product__packaging_ids
@@ -1161,7 +1163,7 @@ msgstr ""
 #: model:ir.model.fields,help:product.field_product_template__standard_price
 msgid ""
 "In Standard Price & AVCO: value of the product (automatically computed in AVCO).\n"
-"        In FIFO: value of the last unit that left the stock (automatically computed).\n"
+"        In FIFO: value of the next unit that will leave the stock (automatically computed).\n"
 "        Used to value the product when the purchase cost is not known (e.g. inventory adjustment).\n"
 "        Used to compute margins on sale orders."
 msgstr ""
@@ -1702,7 +1704,7 @@ msgstr "価格リスト名"
 #: model:ir.model,name:product.model_report_product_report_pricelist
 #, python-format
 msgid "Pricelist Report"
-msgstr ""
+msgstr "価格表レポート"
 
 #. module: product
 #: model:ir.model,name:product.model_product_pricelist_item
@@ -1715,7 +1717,7 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:product.report_pricelist_page
 #, python-format
 msgid "Pricelist:"
-msgstr ""
+msgstr "価格表: "
 
 #. module: product
 #: model:ir.actions.act_window,name:product.product_pricelist_action2
@@ -1781,7 +1783,7 @@ msgstr "製品属性カスタム値"
 #. module: product
 #: model:ir.model.fields,field_description:product.field_product_template_attribute_line__product_template_value_ids
 msgid "Product Attribute Values"
-msgstr ""
+msgstr "プロダクト属性値"
 
 #. module: product
 #: model_terms:ir.ui.view,arch_db:product.product_template_attribute_line_form
@@ -1880,7 +1882,7 @@ msgstr ""
 #. module: product
 #: model:ir.model,name:product.model_product_template_attribute_line
 msgid "Product Template Attribute Line"
-msgstr ""
+msgstr "商品テンプレート属性明細"
 
 #. module: product
 #: model:ir.model,name:product.model_product_template_attribute_value
@@ -1964,7 +1966,7 @@ msgstr "プロダクト価格検索"
 #: code:addons/product/models/product.py:0
 #, python-format
 msgid "Products: %(category)s"
-msgstr ""
+msgstr "プロダクト: %(category)s"
 
 #. module: product
 #: model:ir.model.fields,field_description:product.field_product_product__lst_price
@@ -1999,7 +2001,7 @@ msgstr "購買単位"
 #: code:addons/product/static/src/xml/pricelist_report.xml:0
 #, python-format
 msgid "Quantities:"
-msgstr ""
+msgstr "数量:"
 
 #. module: product
 #: model:ir.model.fields,field_description:product.field_product_supplierinfo__min_qty
@@ -2051,7 +2053,7 @@ msgstr ""
 #: code:addons/product/static/src/xml/pricelist_report.xml:0
 #, python-format
 msgid "Remove quantity"
-msgstr ""
+msgstr "価格を削除"
 
 #. module: product
 #: model:ir.model.fields,field_description:product.field_product_product__activity_user_id
@@ -2174,9 +2176,9 @@ msgstr "このルールが1つの製品テンプレートにのみ適用され�
 #. module: product
 #: model:ir.model.fields,help:product.field_product_pricelist_item__price_surcharge
 msgid ""
-"Specify the fixed amount to add or substract(if negative) to the amount "
+"Specify the fixed amount to add or subtract(if negative) to the amount "
 "calculated with the discount."
-msgstr "割引で計算された金額に(負の場合)を加算または減算する一定量を指定します。"
+msgstr ""
 
 #. module: product
 #: model:ir.model.fields,help:product.field_product_pricelist_item__price_max_margin
@@ -2326,6 +2328,12 @@ msgid "The product template is archived so no combination is possible."
 msgstr ""
 
 #. module: product
+#: code:addons/product/models/product.py:0
+#, python-format
+msgid "The product variant must be a variant of the product template."
+msgstr ""
+
+#. module: product
 #: model:ir.model.fields,help:product.field_product_supplierinfo__min_qty
 msgid ""
 "The quantity to purchase from this vendor to benefit from the price, "
@@ -2368,6 +2376,15 @@ msgstr ""
 #: model:ir.model.fields,help:product.field_product_supplierinfo__product_uom
 msgid "This comes from the product form."
 msgstr "これは製品フォームから来ています。"
+
+#. module: product
+#: code:addons/product/models/product_template.py:0
+#, python-format
+msgid ""
+"This configuration of product attributes, values, and exclusions would lead "
+"to no possible variant. Please archive or delete your product directly if "
+"intended."
+msgstr ""
 
 #. module: product
 #: model:ir.model.fields,help:product.field_product_product__price_extra
@@ -2847,7 +2864,14 @@ msgstr ""
 #, python-format
 msgid ""
 "You cannot delete the value %s because it is used on the following products:\n"
-"%s"
+"%s\n"
+"If the value has been associated to a product in the past, you will not be able to delete it."
+msgstr ""
+
+#. module: product
+#: code:addons/product/models/product_attribute.py:0
+#, python-format
+msgid "You cannot delete value %s because it was used in some products."
 msgstr ""
 
 #. module: product
@@ -2870,6 +2894,14 @@ msgstr ""
 #, python-format
 msgid ""
 "You cannot move the attribute %s from the product %s to the product %s."
+msgstr ""
+
+#. module: product
+#: code:addons/product/models/product_pricelist.py:0
+#, python-format
+msgid ""
+"You cannot disable a pricelist rule, please delete it or archive its "
+"pricelist instead."
 msgstr ""
 
 #. module: product
@@ -2918,7 +2950,7 @@ msgstr "日"
 #. module: product
 #: model_terms:ir.ui.view,arch_db:product.product_category_form_view
 msgid "e.g. Lamps"
-msgstr "レイ. ランプ"
+msgstr "例. ランプ"
 
 #. module: product
 #: model_terms:ir.ui.view,arch_db:product.product_variant_easy_edit_view

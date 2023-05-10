@@ -8,6 +8,7 @@
 # Seongseok Shin <shinss61@hotmail.com>, 2020
 # JH CHOI <hwangtog@gmail.com>, 2021
 # Linkup <link-up@naver.com>, 2021
+# Sarah Park, 2023
 # 
 msgid ""
 msgstr ""
@@ -15,8 +16,8 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-11-27 14:12+0000\n"
 "PO-Revision-Date: 2020-09-07 08:15+0000\n"
-"Last-Translator: Linkup <link-up@naver.com>, 2021\n"
-"Language-Team: Korean (https://www.transifex.com/odoo/teams/41243/ko/)\n"
+"Last-Translator: Sarah Park, 2023\n"
+"Language-Team: Korean (https://app.transifex.com/odoo/teams/41243/ko/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
@@ -297,6 +298,13 @@ msgstr "금액"
 #: model:ir.model.fields,field_description:payment.field_payment_link_wizard__amount_max
 msgid "Amount Max"
 msgstr "최대 금액"
+
+#. module: payment
+#: code:addons/payment/models/account_journal.py:0
+#, python-format
+msgid ""
+"An acquirer is using this journal. Only bank and cash types are allowed."
+msgstr ""
 
 #. module: payment
 #: code:addons/payment/controllers/portal.py:0
@@ -929,7 +937,7 @@ msgstr ""
 #. module: payment
 #: model:ir.model.fields,field_description:payment.field_payment_acquirer__inbound_payment_method_ids
 msgid "Inbound Payment Methods"
-msgstr ""
+msgstr "인바운드 결제 수단"
 
 #. module: payment
 #: model:payment.acquirer,name:payment.payment_acquirer_ingenico
@@ -969,12 +977,6 @@ msgstr "내부 서버 오류"
 #, python-format
 msgid "Invalid token found! Token acquirer %s != %s"
 msgstr "잘못된 토큰을 찾았습니다! 토큰 매입사 %s != %s"
-
-#. module: payment
-#: code:addons/payment/models/account_invoice.py:0
-#, python-format
-msgid "Invalid token found! Token partner %s != %s"
-msgstr "잘못된 토큰을 찾았습니다! 토큰 협력사 %s != %s"
 
 #. module: payment
 #: model_terms:ir.ui.view,arch_db:payment.transaction_form
@@ -1772,6 +1774,14 @@ msgstr "%s 거래는 %s와 %s 사이의 거래로 다음 오류 메시지와 함
 #, python-format
 msgid "The transaction %s with %s for %s is pending."
 msgstr "%s 거래는 %s와 %s 사이의 거래로 보류중입니다."
+
+#. module: payment
+#: code:addons/payment/models/account_invoice.py:0
+#, python-format
+msgid ""
+"The transaction was aborted because you are not the customer of this "
+"invoice. Log in as %s to be able to use this payment method."
+msgstr ""
 
 #. module: payment
 #: code:addons/payment/wizards/payment_link_wizard.py:0

@@ -6,19 +6,19 @@
 # Costas Pittalis <cpittalis@gmail.com>, 2020
 # Giota Dandidou <giotadandidou@gmail.com>, 2020
 # Alexandros Kapetanios <alexandros@gnugr.org>, 2021
-# Martin Trigaux, 2021
 # George Tarasidis <george_tarasidis@yahoo.com>, 2021
-# Kostas Goutoudis <goutoudis@gmail.com>, 2021
 # Stefanos Nikou <stefanos.nikou@gmail.com>, 2021
+# Martin Trigaux, 2022
+# Kostas Goutoudis <goutoudis@gmail.com>, 2022
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 14.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-08-16 07:08+0000\n"
+"POT-Creation-Date: 2021-12-09 16:49+0000\n"
 "PO-Revision-Date: 2020-09-07 08:16+0000\n"
-"Last-Translator: Stefanos Nikou <stefanos.nikou@gmail.com>, 2021\n"
-"Language-Team: Greek (https://www.transifex.com/odoo/teams/41243/el/)\n"
+"Last-Translator: Kostas Goutoudis <goutoudis@gmail.com>, 2022\n"
+"Language-Team: Greek (https://app.transifex.com/odoo/teams/41243/el/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
@@ -60,6 +60,14 @@ msgstr "8.50 &euro;"
 #: code:addons/point_of_sale/models/pos_config.py:0
 #, python-format
 msgid "%(pos_name)s (not used)"
+msgstr ""
+
+#. module: point_of_sale
+#. openerp-web
+#: code:addons/point_of_sale/static/src/js/Screens/TicketScreen/TicketScreen.js:0
+#, python-format
+msgid ""
+"%s has a total amount of %s, are you sure you want to delete this order ?"
 msgstr ""
 
 #. module: point_of_sale
@@ -1856,6 +1864,13 @@ msgid "Error ! You cannot create recursive categories."
 msgstr "Λάθος! Δεν μπορείτα να δημιουργήσετε αναδρομικές κατηγορίες"
 
 #. module: point_of_sale
+#. openerp-web
+#: code:addons/point_of_sale/static/src/js/Screens/TicketScreen/TicketScreen.js:0
+#, python-format
+msgid "Existing orderlines"
+msgstr ""
+
+#. module: point_of_sale
 #: model:ir.model.fields,field_description:point_of_sale.field_pos_session__cash_real_expected
 msgid "Expected"
 msgstr "Αναμένεται"
@@ -2728,6 +2743,13 @@ msgid "Next Order List"
 msgstr ""
 
 #. module: point_of_sale
+#. openerp-web
+#: code:addons/point_of_sale/static/src/js/Screens/ProductScreen/ProductScreen.js:0
+#, python-format
+msgid "No"
+msgstr "Όχι"
+
+#. module: point_of_sale
 #: code:addons/point_of_sale/models/pos_order.py:0
 #, python-format
 msgid "No Taxes"
@@ -3343,6 +3365,8 @@ msgid "Picking POS"
 msgstr ""
 
 #. module: point_of_sale
+#: code:addons/point_of_sale/models/pos_order.py:0
+#: code:addons/point_of_sale/models/pos_session.py:0
 #: model_terms:ir.ui.view,arch_db:point_of_sale.view_pos_pos_form
 #: model_terms:ir.ui.view,arch_db:point_of_sale.view_pos_session_form
 msgid "Pickings"
@@ -4551,6 +4575,13 @@ msgstr ""
 
 #. module: point_of_sale
 #. openerp-web
+#: code:addons/point_of_sale/static/src/js/Screens/ProductScreen/ProductScreen.js:0
+#, python-format
+msgid "Some Serial/Lot Numbers are missing"
+msgstr ""
+
+#. module: point_of_sale
+#. openerp-web
 #: code:addons/point_of_sale/static/src/js/Chrome.js:0
 #, python-format
 msgid ""
@@ -5379,6 +5410,15 @@ msgid "Type of the exception activity on record."
 msgstr ""
 
 #. module: point_of_sale
+#. openerp-web
+#: code:addons/point_of_sale/static/src/js/Screens/ReceiptScreen/ReceiptScreen.js:0
+#, python-format
+msgid ""
+"This order is not yet synced to server. Make sure it is synced then try "
+"again."
+msgstr ""
+
+#. module: point_of_sale
 #: code:addons/point_of_sale/models/pos_session.py:0
 #, python-format
 msgid ""
@@ -5555,6 +5595,13 @@ msgstr "Uuid"
 
 #. module: point_of_sale
 #. openerp-web
+#: code:addons/point_of_sale/static/src/js/Screens/ReceiptScreen/ReceiptScreen.js:0
+#, python-format
+msgid "Unsynced order"
+msgstr ""
+
+#. module: point_of_sale
+#. openerp-web
 #: code:addons/point_of_sale/static/src/xml/Screens/ProductScreen/Orderline.xml:0
 #: code:addons/point_of_sale/static/src/xml/Screens/ProductScreen/Orderline.xml:0
 #, python-format
@@ -5661,6 +5708,13 @@ msgid "Would you like to load demo data?"
 msgstr ""
 
 #. module: point_of_sale
+#. openerp-web
+#: code:addons/point_of_sale/static/src/js/Screens/ProductScreen/ProductScreen.js:0
+#, python-format
+msgid "Yes"
+msgstr "Ναι"
+
+#. module: point_of_sale
 #: code:addons/point_of_sale/models/pos_config.py:0
 #, python-format
 msgid ""
@@ -5684,11 +5738,28 @@ msgid "You are not allowed to change this quantity"
 msgstr ""
 
 #. module: point_of_sale
+#. openerp-web
+#: code:addons/point_of_sale/static/src/js/Screens/ProductScreen/ProductScreen.js:0
+#, python-format
+msgid ""
+"You are trying to sell products with serial/lot numbers, but some of them are not set.\n"
+"Would you like to proceed anyway?"
+msgstr ""
+
+#. module: point_of_sale
 #: code:addons/point_of_sale/models/account_bank_statement.py:0
 #, python-format
 msgid ""
 "You can't validate a bank statement that is used in an opened Session of a "
 "Point of Sale."
+msgstr ""
+
+#. module: point_of_sale
+#: code:addons/point_of_sale/models/pos_session.py:0
+#, python-format
+msgid ""
+"You cannot close the POS when invoices are not posted.\n"
+"Invoices: %s"
 msgstr ""
 
 #. module: point_of_sale

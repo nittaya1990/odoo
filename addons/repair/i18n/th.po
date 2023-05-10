@@ -13,6 +13,8 @@
 # Pornvibool Tippayawat <pornvibool.t@gmail.com>, 2020
 # Odoo Thaidev <odoothaidev@gmail.com>, 2020
 # kittipot anuwet <pipemsn1@gmail.com>, 2021
+# Krisa C, 2021
+# Wichanon Jamwutthipreecha, 2022
 # 
 msgid ""
 msgstr ""
@@ -20,8 +22,8 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-09-29 13:45+0000\n"
 "PO-Revision-Date: 2020-09-07 08:17+0000\n"
-"Last-Translator: kittipot anuwet <pipemsn1@gmail.com>, 2021\n"
-"Language-Team: Thai (https://www.transifex.com/odoo/teams/41243/th/)\n"
+"Last-Translator: Wichanon Jamwutthipreecha, 2022\n"
+"Language-Team: Thai (https://app.transifex.com/odoo/teams/41243/th/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
@@ -160,7 +162,7 @@ msgstr ""
 #. module: repair
 #: model_terms:ir.ui.view,arch_db:repair.stock_warn_insufficient_qty_repair_form_view
 msgid "? This may lead to inconsistencies in your inventory."
-msgstr ""
+msgstr "? ซึ่งอาจนำไปสู่ความไม่สอดคล้องกันในคลังสินค้าของคุณ"
 
 #. module: repair
 #: model:ir.model.fields,field_description:repair.field_repair_order__message_needaction
@@ -310,7 +312,7 @@ msgstr ""
 #. module: repair
 #: model_terms:ir.actions.act_window,help:repair.action_repair_order_tag
 msgid "Create a new tag"
-msgstr ""
+msgstr "สร้างแท็กใหม่"
 
 #. module: repair
 #: model:ir.actions.act_window,name:repair.act_repair_invoice
@@ -421,7 +423,7 @@ msgstr "สิ้นสุดการซ่อม"
 #. module: repair
 #: model:ir.model.fields,help:repair.field_repair_order__tracking
 msgid "Ensure the traceability of a storable product in your warehouse."
-msgstr ""
+msgstr "แน่ใจว่ามีการตรวจสอบย้อนกลับของสินค้าที่จัดเก็บได้ในคลังสินค้าของคุณ"
 
 #. module: repair
 #: model_terms:ir.ui.view,arch_db:repair.view_repair_order_form
@@ -451,7 +453,7 @@ msgstr "ผู้ติดตาม (คู่ค้า)"
 #. module: repair
 #: model:ir.model.fields,help:repair.field_repair_order__activity_type_icon
 msgid "Font awesome icon e.g. fa-tasks"
-msgstr ""
+msgstr "ไอคอนแบบอักษรที่ยอดเยี่ยมเช่น fa-tasks"
 
 #. module: repair
 #: model_terms:ir.ui.view,arch_db:repair.view_repair_order_form_filter
@@ -774,7 +776,7 @@ msgstr ""
 #: code:addons/repair/models/repair.py:0
 #, python-format
 msgid "Please define an accounting sales journal for the company %s (%s)."
-msgstr ""
+msgstr "โปรดกำหนดสมุดการขายรายวันทางบัญชีสำหรับบริษัท %s (%s)."
 
 #. module: repair
 #: model_terms:ir.ui.view,arch_db:repair.report_repairorder
@@ -834,7 +836,7 @@ msgstr "สินค้าที่ซ่อมเป็นของล็อต
 #. module: repair
 #: model:ir.model.fields,field_description:repair.field_stock_warn_insufficient_qty_repair__quant_ids
 msgid "Quant"
-msgstr ""
+msgstr "วิเคราะห์เชิงปริมาณ"
 
 #. module: repair
 #: model:ir.model.fields,field_description:repair.field_repair_fee__product_uom_qty
@@ -888,7 +890,7 @@ msgstr "ลบออก"
 #: model:ir.model.fields,field_description:repair.field_stock_move__repair_id
 #: model:ir.model.fields,field_description:repair.field_stock_warn_insufficient_qty_repair__repair_id
 msgid "Repair"
-msgstr ""
+msgstr "ซ่อมแซม"
 
 #. module: repair
 #: model:ir.model.fields,field_description:repair.field_account_move_line__repair_fee_ids
@@ -1294,6 +1296,18 @@ msgid "You can not enter negative quantities."
 msgstr ""
 
 #. module: repair
+#: code:addons/repair/models/repair.py:0
+#, python-format
+msgid "You cannot cancel a completed repair order."
+msgstr ""
+
+#. module: repair
+#: code:addons/repair/models/repair.py:0
+#, python-format
+msgid "You cannot delete a completed repair order."
+msgstr ""
+
+#. module: repair
 #: code:addons/repair/models/repair.py:0 code:addons/repair/models/repair.py:0
 #, python-format
 msgid ""
@@ -1310,4 +1324,4 @@ msgstr ""
 #. module: repair
 #: model_terms:ir.ui.view,arch_db:repair.stock_warn_insufficient_qty_repair_form_view
 msgid "from location"
-msgstr ""
+msgstr "จากตำแหน่ง"

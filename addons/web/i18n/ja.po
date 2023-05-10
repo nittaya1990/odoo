@@ -18,8 +18,10 @@
 # Noma Yuki, 2020
 # Martin Trigaux, 2021
 # Abe Tomohiro <tomohiro@quartile.co>, 2021
-# Yoshi Tashiro (Quartile) <tashiro@roomsfor.hk>, 2021
-# Ryoko Tsuda <ryoko@quartile.co>, 2021
+# 江口和志 <sandwhale1010@gmail.com>, 2022
+# Yoshi Tashiro (Quartile) <tashiro@roomsfor.hk>, 2022
+# Ryoko Tsuda <ryoko@quartile.co>, 2022
+# Andy Yiu, 2023
 # 
 msgid ""
 msgstr ""
@@ -27,8 +29,8 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-02-25 10:30+0000\n"
 "PO-Revision-Date: 2020-09-07 08:19+0000\n"
-"Last-Translator: Ryoko Tsuda <ryoko@quartile.co>, 2021\n"
-"Language-Team: Japanese (https://www.transifex.com/odoo/teams/41243/ja/)\n"
+"Last-Translator: Andy Yiu, 2023\n"
+"Language-Team: Japanese (https://app.transifex.com/odoo/teams/41243/ja/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
@@ -103,7 +105,7 @@ msgstr ""
 #: code:addons/web/static/src/js/fields/basic_fields.js:0
 #, python-format
 msgid "%s days ago"
-msgstr ""
+msgstr "%s 日前"
 
 #. module: web
 #. openerp-web
@@ -265,11 +267,13 @@ msgid ""
 "<span class=\"text-nowrap\">$ <span "
 "class=\"oe_currency_value\">7,500.00</span></span>"
 msgstr ""
+"<span class=\"text-nowrap\">$ <span "
+"class=\"oe_currency_value\">7,500.00</span></span>"
 
 #. module: web
 #: model_terms:ir.ui.view,arch_db:web.report_invoice_wizard_preview
 msgid "<span class=\"text-nowrap\">1,500.00</span>"
-msgstr ""
+msgstr "<span class=\"text-nowrap\">1,500.00</span>"
 
 #. module: web
 #: model_terms:ir.ui.view,arch_db:web.report_invoice_wizard_preview
@@ -291,7 +295,7 @@ msgstr ""
 #. module: web
 #: model_terms:ir.ui.view,arch_db:web.report_invoice_wizard_preview
 msgid "<span id=\"line_tax_ids\">15.00%</span>"
-msgstr ""
+msgstr "<span id=\"line_tax_ids\">15.00%</span>"
 
 #. module: web
 #: model_terms:ir.ui.view,arch_db:web.report_invoice_wizard_preview
@@ -463,7 +467,7 @@ msgstr "アセットのデバッグを有効化"
 #: code:addons/web/static/src/xml/debug.xml:0
 #, python-format
 msgid "Activate Tests Assets Debugging"
-msgstr ""
+msgstr "テストアセットのデバッグを有効化"
 
 #. module: web
 #. openerp-web
@@ -696,6 +700,7 @@ msgstr "印刷された文書(レポートヘッダ)の右上隅にデフォル�
 
 #. module: web
 #. openerp-web
+#: code:addons/web/static/src/js/fields/basic_fields.js:0
 #: code:addons/web/static/src/xml/base.xml:0
 #: code:addons/web/static/src/xml/base.xml:0
 #, python-format
@@ -786,7 +791,7 @@ msgstr "本当にこのレコードを削除しますか？"
 #: code:addons/web/static/src/xml/base.xml:0
 #, python-format
 msgid "Are you sure you want to perform the following update on those"
-msgstr ""
+msgstr "本当に次の件数のレコードを更新しますか:"
 
 #. module: web
 #. openerp-web
@@ -953,6 +958,7 @@ msgstr "カレンダービューで 'date_start'属性が定義されていま�
 #. openerp-web
 #: code:addons/web/static/src/js/core/dialog.js:0
 #: code:addons/web/static/src/js/core/dialog.js:0
+#: code:addons/web/static/src/js/fields/basic_fields.js:0
 #: code:addons/web/static/src/js/fields/relational_fields.js:0
 #: code:addons/web/static/src/js/fields/upgrade_fields.js:0
 #: code:addons/web/static/src/js/services/crash_manager.js:0
@@ -1206,7 +1212,7 @@ msgstr "コンテキスト:"
 #: code:addons/web/static/src/xml/menu.xml:0
 #, python-format
 msgid "Control"
-msgstr "後続処理"
+msgstr "CTRL"
 
 #. module: web
 #. openerp-web
@@ -1283,7 +1289,7 @@ msgstr "XMLをシリアライズできませんでした"
 msgid ""
 "Could not set the cover image: incorrect field (\"%s\") is provided in the "
 "view."
-msgstr ""
+msgstr "カバー画像を設定できません: 表示に提供されるフィールド (\"%s\")は間違っています。"
 
 #. module: web
 #. openerp-web
@@ -2172,7 +2178,7 @@ msgstr ""
 #: code:addons/web/static/src/js/widgets/attach_document.js:0
 #, python-format
 msgid "Invalid fields:"
-msgstr ""
+msgstr "項目が無効です:"
 
 #. module: web
 #: code:addons/web/controllers/main.py:0
@@ -2405,7 +2411,7 @@ msgstr ""
 #: code:addons/web/static/src/xml/base.xml:0
 #, python-format
 msgid "Main actions"
-msgstr ""
+msgstr "メインアクション"
 
 #. module: web
 #. openerp-web
@@ -2704,7 +2710,7 @@ msgstr "レコードなし"
 #: code:addons/web/static/src/js/views/view_dialogs.js:0
 #, python-format
 msgid "No records found!"
-msgstr ""
+msgstr "レコードがありません！"
 
 #. module: web
 #. openerp-web
@@ -3262,7 +3268,7 @@ msgstr ""
 #: code:addons/web/static/src/js/fields/basic_fields.js:0
 #, python-format
 msgid "Progress Bar"
-msgstr ""
+msgstr "進捗バー"
 
 #. module: web
 #. openerp-web
@@ -4018,7 +4024,7 @@ msgstr ""
 #: code:addons/web/static/src/xml/kanban.xml:0
 #, python-format
 msgid "There is no available image to be set as cover."
-msgstr ""
+msgstr "カバーとして使用できる画像がありません。"
 
 #. module: web
 #. openerp-web
@@ -4094,7 +4100,7 @@ msgstr "時間"
 msgid ""
 "Timezone Mismatch : This timezone is different from that of your browser.\n"
 "Please, set the same timezone as your browser's to avoid time discrepancies in your system."
-msgstr ""
+msgstr "時間帯不一致: この時間帯はお使いのブラウザの時間帯と一致してません。"
 
 #. module: web
 #. openerp-web
@@ -4109,7 +4115,7 @@ msgstr "本日"
 #: code:addons/web/static/src/js/fields/basic_fields.js:0
 #, python-format
 msgid "Toggle"
-msgstr ""
+msgstr "切り替える"
 
 #. module: web
 #. openerp-web
@@ -4281,7 +4287,7 @@ msgstr "無題"
 #: code:addons/web/static/src/xml/base.xml:0
 #, python-format
 msgid "Update to:"
-msgstr ""
+msgstr "次のとおり更新:"
 
 #. module: web
 #. openerp-web
@@ -4433,7 +4439,7 @@ msgstr "%sを見る"
 #: code:addons/web/static/src/xml/debug.xml:0
 #, python-format
 msgid "View Access Rights"
-msgstr ""
+msgstr "アクセス権を参照"
 
 #. module: web
 #. openerp-web
@@ -4455,7 +4461,7 @@ msgstr "メタデータ照会"
 #: code:addons/web/static/src/xml/debug.xml:0
 #, python-format
 msgid "View Record Rules"
-msgstr ""
+msgstr "レコード規則を参照"
 
 #. module: web
 #: model:ir.model.fields,field_description:web.field_ir_actions_act_window_view__view_mode
@@ -4473,6 +4479,7 @@ msgstr "サブスクリプションはすでにデータベースにリンクさ
 #. openerp-web
 #: code:addons/web/static/src/js/chrome/action_manager_report.js:0
 #: code:addons/web/static/src/js/services/crash_manager.js:0
+#: code:addons/web/static/src/js/control_panel/favorite_menu.js:0
 #: code:addons/web/static/src/js/views/basic/basic_controller.js:0
 #: code:addons/web/static/src/js/views/basic/basic_controller.js:0
 #: code:addons/web/static/src/js/views/list/list_controller.js:0
@@ -4585,6 +4592,12 @@ msgstr "はい"
 #, python-format
 msgid "Yesterday"
 msgstr "昨日"
+
+#. module: web
+#: code:addons/web/controllers/main.py:0
+#, python-format
+msgid "You are not allowed to upload an attachment here."
+msgstr ""
 
 #. module: web
 #. openerp-web
@@ -5053,7 +5066,7 @@ msgstr ""
 #: code:addons/web/static/src/xml/base.xml:0
 #, python-format
 msgid "selected"
-msgstr ""
+msgstr "選択済"
 
 #. module: web
 #. openerp-web

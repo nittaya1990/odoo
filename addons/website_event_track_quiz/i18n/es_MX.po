@@ -14,12 +14,12 @@ msgstr ""
 "POT-Creation-Date: 2020-11-27 14:13+0000\n"
 "PO-Revision-Date: 2020-09-07 08:21+0000\n"
 "Last-Translator: Lucia Pacheco <lpo@odoo.com>, 2021\n"
-"Language-Team: Spanish (Mexico) (https://www.transifex.com/odoo/teams/41243/es_MX/)\n"
+"Language-Team: Spanish (Mexico) (https://app.transifex.com/odoo/teams/41243/es_MX/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
 "Language: es_MX\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=3; plural=n == 1 ? 0 : n != 0 && n % 1000000 == 0 ? 1 : 2;\n"
 
 #. module: website_event_track_quiz
 #: model:ir.model.fields,field_description:website_event_track_quiz.field_event_track__quiz_questions_count
@@ -245,7 +245,7 @@ msgstr ""
 #. module: website_event_track_quiz
 #: model:ir.model.fields,field_description:website_event_track_quiz.field_event_track__is_quiz_completed
 msgid "Is Quiz Done"
-msgstr "¿Acabo la prueba?"
+msgstr "¿Ya acabó la prueba?"
 
 #. module: website_event_track_quiz
 #: model:ir.model.fields,field_description:website_event_track_quiz.field_event_quiz_answer__is_correct
@@ -482,7 +482,7 @@ msgid ""
 "                It is used as a small informational text helping to understand why this answer is correct / incorrect."
 msgstr ""
 "Si el usuario seleccionó esta respuesta, se le mostrará este comentario una vez que haya enviado la prueba.\n"
-"Se utiliza como un pequeño texto informativo que ayuda a entender por qué esta respuesta es correcta / incorrecta."
+"Se utiliza como un pequeño texto informativo que ayuda a entender por qué esta respuesta es correcta/incorrecta."
 
 #. module: website_event_track_quiz
 #. openerp-web
@@ -504,7 +504,7 @@ msgstr "Grabación"
 #. module: website_event_track_quiz
 #: model:ir.model,name:website_event_track_quiz.model_event_track_visitor
 msgid "Track / Visitor Link"
-msgstr "Rastrear / visitante del enlace"
+msgstr "Grabación/visitante del enlace"
 
 #. module: website_event_track_quiz
 #: model:ir.model.fields,field_description:website_event_track_quiz.field_event_quiz__event_track_ids

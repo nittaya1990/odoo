@@ -25,7 +25,7 @@ class StockMoveLine(models.Model):
         check_company=True,
         help="Change to a better name", index=True)
     company_id = fields.Many2one('res.company', string='Company', readonly=True, required=True, index=True)
-    product_id = fields.Many2one('product.product', 'Product', ondelete="cascade", check_company=True, domain="[('type', '!=', 'service'), '|', ('company_id', '=', False), ('company_id', '=', company_id)]")
+    product_id = fields.Many2one('product.product', 'Product', ondelete="cascade", check_company=True, domain="[('type', '!=', 'service'), '|', ('company_id', '=', False), ('company_id', '=', company_id)]", index=True)
     product_uom_id = fields.Many2one('uom.uom', 'Unit of Measure', required=True, domain="[('category_id', '=', product_uom_category_id)]")
     product_uom_category_id = fields.Many2one(related='product_id.uom_id.category_id')
     product_qty = fields.Float(
@@ -79,7 +79,7 @@ class StockMoveLine(models.Model):
             else:
                 line.lots_visible = line.product_id.tracking != 'none'
 
-    @api.depends('product_id', 'product_uom_id', 'product_uom_qty')
+    @api.depends('product_id', 'product_id.uom_id', 'product_uom_id', 'product_uom_qty')
     def _compute_product_qty(self):
         for line in self:
             line.product_qty = line.product_uom_id._compute_quantity(line.product_uom_qty, line.product_id.uom_id, rounding_method='HALF-UP')
@@ -191,24 +191,13 @@ class StockMoveLine(models.Model):
                 vals['company_id'] = self.env['stock.move'].browse(vals['move_id']).company_id.id
             elif vals.get('picking_id'):
                 vals['company_id'] = self.env['stock.picking'].browse(vals['picking_id']).company_id.id
+            if self.env.context.get('import_file') and vals.get('product_uom_qty') != 0:
+                raise UserError(_("It is not allow to import reserved quantity, you have to use the quantity directly."))
 
         mls = super().create(vals_list)
 
         def create_move(move_line):
-            new_move = self.env['stock.move'].create({
-                'name': _('New Move:') + move_line.product_id.display_name,
-                'product_id': move_line.product_id.id,
-                'product_uom_qty': 0 if move_line.picking_id and move_line.picking_id.state != 'done' else move_line.qty_done,
-                'product_uom': move_line.product_uom_id.id,
-                'description_picking': move_line.description_picking,
-                'location_id': move_line.picking_id.location_id.id,
-                'location_dest_id': move_line.picking_id.location_dest_id.id,
-                'picking_id': move_line.picking_id.id,
-                'state': move_line.picking_id.state,
-                'picking_type_id': move_line.picking_id.picking_type_id.id,
-                'restrict_partner_id': move_line.picking_id.owner_id.id,
-                'company_id': move_line.picking_id.company_id.id,
-            })
+            new_move = self.env['stock.move'].create(move_line._prepare_stock_move_vals())
             move_line.move_id = new_move.id
 
         # If the move line is directly create on the picking view.
@@ -287,7 +276,9 @@ class StockMoveLine(models.Model):
                     # TODO: make package levels less of a pain and fix this
                     package_level = ml.package_level_id
                     ml.package_level_id = False
-                    package_level.unlink()
+                    # Only need to unlink the package level if it's empty. Otherwise will unlink it to still valid move lines.
+                    if not package_level.move_line_ids:
+                        package_level.unlink()
 
         # When we try to write on a reserved move line any fields from `triggers` or directly
         # `product_uom_qty` (the actual reserved quantity), we need to make sure the associated
@@ -324,6 +315,8 @@ class StockMoveLine(models.Model):
                         new_product_uom_qty = ml.product_id.uom_id._compute_quantity(reserved_qty, ml.product_uom_id, rounding_method='HALF-UP')
                         moves_to_recompute_state |= ml.move_id
                         ml.with_context(bypass_reservation_update=True).product_uom_qty = new_product_uom_qty
+                        # we don't want to override the new reserved quantity
+                        vals.pop('product_uom_qty', None)
 
         # When editing a done move line, the reserved availability of a potential chained move is impacted. Take care of running again `_action_assign` on the concerned moves.
         if updates or 'qty_done' in vals:
@@ -438,9 +431,9 @@ class StockMoveLine(models.Model):
             precision_digits = self.env['decimal.precision'].precision_get('Product Unit of Measure')
             qty_done = float_round(ml.qty_done, precision_digits=precision_digits, rounding_method='HALF-UP')
             if float_compare(uom_qty, qty_done, precision_digits=precision_digits) != 0:
-                raise UserError(_('The quantity done for the product "%s" doesn\'t respect the rounding precision \
-                                  defined on the unit of measure "%s". Please change the quantity done or the \
-                                  rounding precision of your unit of measure.') % (ml.product_id.display_name, ml.product_uom_id.name))
+                raise UserError(_('The quantity done for the product "%s" doesn\'t respect the rounding precision '
+                                  'defined on the unit of measure "%s". Please change the quantity done or the '
+                                  'rounding precision of your unit of measure.') % (ml.product_id.display_name, ml.product_uom_id.name))
 
             qty_done_float_compared = float_compare(ml.qty_done, 0, precision_rounding=ml.product_uom_id.rounding)
             if qty_done_float_compared > 0:
@@ -533,6 +526,14 @@ class StockMoveLine(models.Model):
             lines |= picking_id.move_line_ids.filtered(lambda ml: ml.product_id == self.product_id and (ml.lot_id or ml.lot_name))
         return lines
 
+    def _get_value_production_lot(self):
+        self.ensure_one()
+        return {
+            'company_id': self.company_id.id,
+            'name': self.lot_name,
+            'product_id': self.product_id.id
+        }
+
     def _create_and_assign_production_lot(self):
         """ Creates and assign new production lots for move lines."""
         lot_vals = []
@@ -545,11 +546,7 @@ class StockMoveLine(models.Model):
             key_to_mls[key] |= ml
             if ml.tracking != 'lot' or key not in key_to_index:
                 key_to_index[key] = len(lot_vals)
-                lot_vals.append({
-                    'company_id': ml.company_id.id,
-                    'name': ml.lot_name,
-                    'product_id': ml.product_id.id
-                })
+                lot_vals.append(ml._get_value_production_lot())
 
         lots = self.env['stock.production.lot'].create(lot_vals)
         for key, mls in key_to_mls.items():
@@ -680,6 +677,7 @@ class StockMoveLine(models.Model):
                                                    'description': description,
                                                    'qty_done': move_line.qty_done,
                                                    'product_uom': uom.name,
+                                                   'product_uom_rec': uom,
                                                    'product': move_line.product_id}
             else:
                 aggregated_move_lines[line_key]['qty_done'] += move_line.qty_done
@@ -688,3 +686,21 @@ class StockMoveLine(models.Model):
     def _compute_sale_price(self):
         # To Override
         pass
+
+    @api.model
+    def _prepare_stock_move_vals(self):
+        self.ensure_one()
+        return {
+            'name': _('New Move:') + self.product_id.display_name,
+            'product_id': self.product_id.id,
+            'product_uom_qty': 0 if self.picking_id and self.picking_id.state != 'done' else self.qty_done,
+            'product_uom': self.product_uom_id.id,
+            'description_picking': self.description_picking,
+            'location_id': self.picking_id.location_id.id,
+            'location_dest_id': self.picking_id.location_dest_id.id,
+            'picking_id': self.picking_id.id,
+            'state': self.picking_id.state,
+            'picking_type_id': self.picking_id.picking_type_id.id,
+            'restrict_partner_id': self.picking_id.owner_id.id,
+            'company_id': self.picking_id.company_id.id,
+        }

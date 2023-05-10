@@ -36,6 +36,7 @@
 # Vanderlei P. Romera <vanderleiromera@gmail.com>, 2020
 # Luis Felipe Miléo <mileo@kmee.com.br>, 2020
 # Éder Brito <britoederr@gmail.com>, 2021
+# Layna Nascimento, 2023
 # 
 msgid ""
 msgstr ""
@@ -43,13 +44,13 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-10-29 15:48+0000\n"
 "PO-Revision-Date: 2020-09-07 08:14+0000\n"
-"Last-Translator: Éder Brito <britoederr@gmail.com>, 2021\n"
-"Language-Team: Portuguese (Brazil) (https://www.transifex.com/odoo/teams/41243/pt_BR/)\n"
+"Last-Translator: Layna Nascimento, 2023\n"
+"Language-Team: Portuguese (Brazil) (https://app.transifex.com/odoo/teams/41243/pt_BR/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
 "Language: pt_BR\n"
-"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"Plural-Forms: nplurals=3; plural=(n == 0 || n == 1) ? 0 : n != 0 && n % 1000000 == 0 ? 1 : 2;\n"
 
 #. module: mrp
 #: model:ir.model.fields,help:mrp.field_mrp_production__state
@@ -2185,6 +2186,14 @@ msgid "It has already been unblocked."
 msgstr "Já foi desbloqueado."
 
 #. module: mrp
+#: code:addons/mrp/models/mrp_workorder.py:0
+#, python-format
+msgid ""
+"It is not possible to unplan one single Work Order. You should unplan the "
+"Manufacturing Order instead in order to unplan all the linked operations."
+msgstr ""
+
+#. module: mrp
 #: model:ir.model.fields,field_description:mrp.field_mrp_production__is_planned
 msgid "Its Operations are Planned"
 msgstr "Suas Operações Estão Planejadas"
@@ -2845,6 +2854,23 @@ msgstr "Não Disponível"
 #: model:ir.model.fields,help:mrp.field_stock_scrap__workorder_id
 msgid "Not to restrict or prefer quants, but informative."
 msgstr "Não é para restringir ou preferir quantidades, mas informar."
+
+#. module: mrp
+#: code:addons/mrp/models/mrp_workcenter.py:0
+#, python-format
+msgid ""
+"Note that archived work center(s): '%s' is/are still linked to active Bill "
+"of Materials, which means that operations can still be planned on it/them. "
+"To prevent this, deletion of the work center is recommended instead."
+msgstr ""
+
+#. module: mrp
+#: code:addons/mrp/models/product.py:0 code:addons/mrp/models/product.py:0
+#, python-format
+msgid ""
+"Note that product(s): '%s' is/are still linked to active Bill of Materials, "
+"which means that the product can still be used on it/them."
+msgstr ""
 
 #. module: mrp
 #: model:ir.model.fields,field_description:mrp.field_mrp_bom__message_needaction_counter
@@ -3844,6 +3870,12 @@ msgid "Sequence stock after manufacturing"
 msgstr "Sequenciar estoque após a produção"
 
 #. module: mrp
+#: code:addons/mrp/models/mrp_production.py:0
+#, python-format
+msgid "Serial number (%s) has already been produced."
+msgstr ""
+
+#. module: mrp
 #: model:ir.model.fields.selection,name:mrp.selection__mrp_routing_workcenter__time_mode__manual
 msgid "Set duration manually"
 msgstr "Definir a duração manualmente"
@@ -4219,6 +4251,12 @@ msgstr ""
 " do que no formulário do produto."
 
 #. module: mrp
+#: code:addons/mrp/models/mrp_workcenter.py:0
+#, python-format
+msgid "The Workorder (%s) cannot be started twice!"
+msgstr ""
+
+#. module: mrp
 #: code:addons/mrp/models/mrp_bom.py:0
 #, python-format
 msgid ""
@@ -4270,6 +4308,15 @@ msgstr ""
 " de início planejada, corrija isso para salvar a ordem de serviço."
 
 #. module: mrp
+#: code:addons/mrp/models/mrp_bom.py:0
+#, python-format
+msgid ""
+"The product has already been used at least once, editing its structure may "
+"lead to undesirable behaviours. You should rather archive the product and "
+"create a new one with a new bill of materials."
+msgstr ""
+
+#. module: mrp
 #: code:addons/mrp/models/mrp_production.py:0
 #: model:ir.model.constraint,message:mrp.constraint_mrp_bom_qty_positive
 #: model:ir.model.constraint,message:mrp.constraint_mrp_production_qty_positive
@@ -4301,6 +4348,14 @@ msgid ""
 msgstr ""
 "O número de série %(number)s usado pelo componente %(component)s já foi "
 "consumido"
+
+#. module: mrp
+#: code:addons/mrp/models/mrp_unbuild.py:0
+#, python-format
+msgid ""
+"The selected serial number does not correspond to the one used in the "
+"manufacturing order, please select another one."
+msgstr ""
 
 #. module: mrp
 #: code:addons/mrp/models/mrp_bom.py:0
@@ -5032,7 +5087,7 @@ msgstr "Instrução de Trabalho"
 #: model:ir.model.fields,field_description:mrp.field_stock_scrap__workorder_id
 #: model_terms:ir.ui.view,arch_db:mrp.view_mrp_production_workorder_form_view_filter
 msgid "Work Order"
-msgstr "Ordem de Serviço"
+msgstr "Ordem de trabalho"
 
 #. module: mrp
 #: model_terms:ir.ui.view,arch_db:mrp.res_config_settings_view_form

@@ -1552,7 +1552,7 @@ msgstr ""
 
 #. module: stock
 #: model:ir.model.fields,field_description:stock.field_res_config_settings__module_delivery_dhl
-msgid "DHL USA Connector"
+msgid "DHL Express Connector"
 msgstr ""
 
 #. module: stock
@@ -1667,7 +1667,7 @@ msgstr ""
 #: model_terms:ir.actions.act_window,help:stock.action_orderpoint
 msgid ""
 "Define a minimum stock rule so that Odoo creates automatically requests for "
-"quotations or draft manufacturing orders to resupply your stock."
+"quotations or confirmed manufacturing orders to resupply your stock."
 msgstr ""
 
 #. module: stock
@@ -2933,6 +2933,12 @@ msgid "Invalid domain right operand %s"
 msgstr ""
 
 #. module: stock
+#: code:addons/stock/models/product.py:0
+#, python-format
+msgid "Invalid rule's configuration, the following rule causes an endless loop: %s"
+msgstr ""
+
+#. module: stock
 #: model:ir.model.fields,field_description:stock.field_stock_quant__inventory_quantity
 msgid "Inventoried Quantity"
 msgstr ""
@@ -3105,14 +3111,22 @@ msgstr ""
 #: code:addons/stock/models/stock_quant.py:0
 #, python-format
 msgid ""
-"It is not possible to reserve more products of %s than you have in stock."
+"It is not possible to unreserve more products of %s than you have in stock."
+"The correction could unreserve some operations with problematics products."
 msgstr ""
 
 #. module: stock
 #: code:addons/stock/models/stock_quant.py:0
 #, python-format
 msgid ""
-"It is not possible to unreserve more products of %s than you have in stock."
+"It is not possible to unreserve more products of %s than you have in stock. Contact an administrator."
+msgstr ""
+
+#. module: stock
+#: code:addons/stock/models/stock_quant.py:0
+#, python-format
+msgid ""
+"Try our automated action to fix it"
 msgstr ""
 
 #. module: stock
@@ -4914,6 +4928,12 @@ msgstr ""
 #. module: stock
 #: code:addons/stock/models/stock_quant.py:0
 #, python-format
+msgid "Quants are auto-deleted when appropriate. If you must manually delete them, please ask a stock manager to do it."
+msgstr ""
+
+#. module: stock
+#: code:addons/stock/models/stock_quant.py:0
+#, python-format
 msgid "Quant's creation is restricted, you can't do this operation."
 msgstr ""
 
@@ -6414,10 +6434,8 @@ msgstr ""
 #, python-format
 msgid ""
 "The quantity done for the product \"%s\" doesn't respect the rounding "
-"precision                                   defined on the unit of measure "
-"\"%s\". Please change the quantity done or the"
-"                                   rounding precision of your unit of "
-"measure."
+"precision defined on the unit of measure \"%s\". Please change the quantity "
+"done or the rounding precision of your unit of measure."
 msgstr ""
 
 #. module: stock
@@ -6604,6 +6622,22 @@ msgid ""
 "advised to change the Product Type since it can lead to inconsistencies. A "
 "better solution could be to archive the product and create a new one "
 "instead."
+msgstr ""
+
+#. module: stock
+#: code:addons/stock/models/product.py:0
+#, python-format
+msgid ""
+"This product's company cannot be changed as long as there are quantities of it"
+" belonging to another company."
+msgstr ""
+
+#. module: stock
+#: code:addons/stock/models/product.py:0
+#, python-format
+msgid ""
+"This product's company cannot be changed as long as there are stock moves of "
+"it belonging to another company."
 msgstr ""
 
 #. module: stock
@@ -6965,7 +6999,7 @@ msgstr ""
 
 #. module: stock
 #: model:ir.model.fields,field_description:stock.field_product_replenish__product_uom_id
-msgid "Unity of measure"
+msgid "Unit of measure"
 msgstr ""
 
 #. module: stock
@@ -7492,6 +7526,13 @@ msgid ""
 msgstr ""
 
 #. module: stock
+#: code:addons/stock/models/product.py:0
+#, python-format
+msgid ""
+"You can not change the type of a product that was already used."
+msgstr ""
+
+#. module: stock
 #: code:addons/stock/models/stock_move_line.py:0
 #, python-format
 msgid ""
@@ -7652,6 +7693,12 @@ msgstr ""
 #: code:addons/stock/models/stock_move.py:0
 #, python-format
 msgid "You cannot unreserve a stock move that has been set to 'Done'."
+msgstr ""
+
+#. module: stock
+#: code:addons/stock/models/stock_move.py:0
+#, python-format
+msgid "You cannot change a cancelled stock move, create a new line instead."
 msgstr ""
 
 #. module: stock
@@ -7888,4 +7935,11 @@ msgstr ""
 #: code:addons/stock/static/src/xml/stock_orderpoint.xml:0
 #, python-format
 msgid "should be replenished to reach the maximum of"
+msgstr ""
+
+#. module: stock
+#: code:addons/stock/models/stock_move_line.py:0
+#, python-format
+msgid ""
+"It is not allow to import reserved quantity, you have to use the quantity directly."
 msgstr ""

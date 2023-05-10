@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 # Part of Odoo. See LICENSE file for full copyright and licensing details.
 
-from odoo import fields, models
+from odoo import fields, models, api
 
 
 class StockPickingType(models.Model):
@@ -48,7 +48,16 @@ class StockPickingType(models.Model):
             remaining.count_mo_late = False
 
     def get_mrp_stock_picking_action_picking_type(self):
-        return self._get_action('mrp.mrp_production_action_picking_deshboard')
+        action = self.env["ir.actions.actions"]._for_xml_id('mrp.mrp_production_action_picking_deshboard')
+        if self:
+            action['display_name'] = self.display_name
+        return action
+
+    @api.onchange('code')
+    def _onchange_code(self):
+        if self.code == 'mrp_operation':
+            self.use_create_lots = True
+            self.use_existing_lots = True
 
 class StockPicking(models.Model):
     _inherit = 'stock.picking'

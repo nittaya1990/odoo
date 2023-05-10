@@ -12,8 +12,8 @@
 # Boris Kodelja <boris@hbs.si>, 2021
 # Grega Vavtar <grega@hbs.si>, 2021
 # Tadej Lupšina <tadej@hbs.si>, 2021
-# Jasmina Macur <jasmina@hbs.si>, 2021
 # Nejc G <nejc@luxim.si>, 2021
+# Jasmina Macur <jasmina@hbs.si>, 2021
 # 
 msgid ""
 msgstr ""
@@ -21,8 +21,8 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-11-16 13:33+0000\n"
 "PO-Revision-Date: 2020-09-07 08:22+0000\n"
-"Last-Translator: Nejc G <nejc@luxim.si>, 2021\n"
-"Language-Team: Slovenian (https://www.transifex.com/odoo/teams/41243/sl/)\n"
+"Last-Translator: Jasmina Macur <jasmina@hbs.si>, 2021\n"
+"Language-Team: Slovenian (https://app.transifex.com/odoo/teams/41243/sl/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
@@ -268,8 +268,8 @@ msgstr ""
 #. module: website_sale
 #: model_terms:ir.ui.view,arch_db:website_sale.terms
 msgid ""
-"<small class=\"text-muted float-right\">Source: https://termsfeed.com/blog"
-"/sample-terms-and-conditions-template</small>"
+"<small class=\"text-muted float-right\">Source: "
+"https://termsfeed.com/blog/sample-terms-and-conditions-template</small>"
 msgstr ""
 
 #. module: website_sale
@@ -357,7 +357,7 @@ msgstr ""
 #. module: website_sale
 #: model_terms:ir.ui.view,arch_db:website_sale.res_config_settings_view_form
 msgid "<span class=\"o_form_label\">Confirmation Email</span>"
-msgstr ""
+msgstr "<span class=\"o_form_label\">Potrditvena e-pošta</span>"
 
 #. module: website_sale
 #: model_terms:ir.ui.view,arch_db:website_sale.res_config_settings_view_form
@@ -426,6 +426,13 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:website_sale.suggested_products_list
 msgid "<strong>Add to Cart</strong>"
 msgstr "<strong>Dodaj v voziček</strong>"
+
+#. module: website_sale
+#: model_terms:ir.ui.view,arch_db:website_sale.payment
+msgid ""
+"<strong>No suitable payment option could be found.</strong><br/>\n"
+"                                    If you believe that it is an error, please contact the website administrator."
+msgstr ""
 
 #. module: website_sale
 #: model_terms:ir.ui.view,arch_db:website_sale.confirmation
@@ -810,6 +817,14 @@ msgid "Chairs"
 msgstr ""
 
 #. module: website_sale
+#: code:addons/website_sale/controllers/main.py:0
+#, python-format
+msgid ""
+"Changing your name is not allowed once invoices have been issued for your "
+"account. Please contact us directly for this operation."
+msgstr ""
+
+#. module: website_sale
 #: model:ir.model.fields,field_description:website_sale.field_product_public_category__child_id
 msgid "Children Categories"
 msgstr "Podrejene kategorije"
@@ -1022,8 +1037,8 @@ msgstr "Stranke"
 
 #. module: website_sale
 #: model_terms:ir.ui.view,arch_db:website_sale.res_config_settings_view_form
-msgid "DHL"
-msgstr "DHL"
+msgid "DHL Express Connector"
+msgstr ""
 
 #. module: website_sale
 #: model:ir.model.fields,field_description:website_sale.field_website__currency_id
@@ -1658,6 +1673,7 @@ msgstr "Moja košarica"
 #: model:ir.model.fields,field_description:website_sale.field_product_image__name
 #: model:ir.model.fields,field_description:website_sale.field_product_public_category__name
 #: model_terms:ir.ui.view,arch_db:website_sale.address
+#: model_terms:ir.ui.view,arch_db:website_sale.product_ribbon_view_tree
 #, python-format
 msgid "Name"
 msgstr "Naziv"
@@ -1701,6 +1717,14 @@ msgstr "Naslednji <span class=\"fa fa-chevron-right\"/>"
 #: model_terms:ir.actions.act_window,help:website_sale.action_view_abandoned_tree
 msgid "No abandoned carts found"
 msgstr "Najdenih ni nobenih zapuščenih vozičkov"
+
+#. module: website_sale
+#: code:addons/website_sale/controllers/main.py:0
+#, python-format
+msgid ""
+"No payment method is available for your current order. Please contact us for"
+" more information."
+msgstr ""
 
 #. module: website_sale
 #: model_terms:ir.ui.view,arch_db:website_sale.products
@@ -2187,13 +2211,16 @@ msgid "Product views"
 msgstr ""
 
 #. module: website_sale
+#: code:addons/website_sale/models/website.py:0
 #: model:ir.actions.act_window,name:website_sale.product_template_action_website
 #: model:ir.ui.menu,name:website_sale.menu_catalog
 #: model:ir.ui.menu,name:website_sale.menu_catalog_products
 #: model:ir.ui.menu,name:website_sale.menu_product_settings
+#: model:website.snippet.filter,name:website_sale.dynamic_filter_demo_products
 #: model_terms:ir.ui.view,arch_db:website_sale.product
 #: model_terms:ir.ui.view,arch_db:website_sale.res_config_settings_view_form
 #: model_terms:ir.ui.view,arch_db:website_sale.website_sale_visitor_page_view_search
+#, python-format
 msgid "Products"
 msgstr "Proizvodi"
 
@@ -2491,7 +2518,7 @@ msgstr ""
 #. module: website_sale
 #: model_terms:ir.ui.view,arch_db:website_sale.address_kanban
 msgid "Select this address"
-msgstr ""
+msgstr "Izberite ta naslov"
 
 #. module: website_sale
 #: model:ir.model.fields,field_description:website_sale.field_product_pricelist__selectable
@@ -2666,6 +2693,12 @@ msgstr "Prodano"
 #, python-format
 msgid "Some required fields are empty."
 msgstr "Nekatera obvezna polja so prazna."
+
+#. module: website_sale
+#: code:addons/website_sale/controllers/main.py:0
+#, python-format
+msgid "Sorry, we are unable to find a Payment Method"
+msgstr ""
 
 #. module: website_sale
 #: model_terms:ir.ui.view,arch_db:website_sale.sort

@@ -6,7 +6,7 @@
 # Bohdan Lisnenko, 2020
 # ТАрас <tratatuta@i.ua>, 2020
 # Martin Trigaux, 2020
-# Alina Lisnenko <alinasemeniuk1@gmail.com>, 2021
+# Alina Lisnenko <alina.lisnenko@erp.co.ua>, 2022
 # 
 msgid ""
 msgstr ""
@@ -14,8 +14,8 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-09-29 13:46+0000\n"
 "PO-Revision-Date: 2020-09-07 08:18+0000\n"
-"Last-Translator: Alina Lisnenko <alinasemeniuk1@gmail.com>, 2021\n"
-"Language-Team: Ukrainian (https://www.transifex.com/odoo/teams/41243/uk/)\n"
+"Last-Translator: Alina Lisnenko <alina.lisnenko@erp.co.ua>, 2022\n"
+"Language-Team: Ukrainian (https://app.transifex.com/odoo/teams/41243/uk/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
@@ -302,7 +302,7 @@ msgstr "Чернетка SO"
 #. module: sale_stock
 #: model:ir.model.fields,field_description:sale_stock.field_sale_order__effective_date
 msgid "Effective Date"
-msgstr "Дата набрання чинності"
+msgstr "Дата відвантаження"
 
 #. module: sale_stock
 #: model_terms:ir.ui.view,arch_db:sale_stock.exception_on_picking
@@ -475,7 +475,7 @@ msgstr "Елемент журналу"
 #: model:ir.model.fields,field_description:sale_stock.field_stock_rule____last_update
 #: model:ir.model.fields,field_description:sale_stock.field_stock_rules_report____last_update
 msgid "Last Modified on"
-msgstr "Останні зміни на"
+msgstr "Останні зміни"
 
 #. module: sale_stock
 #: model:ir.model,name:sale_stock.model_stock_production_lot
@@ -762,12 +762,12 @@ msgstr "Складське правило"
 #. module: sale_stock
 #: model:ir.model,name:sale_stock.model_stock_rules_report
 msgid "Stock Rules report"
-msgstr "Звіт правил запасу"
+msgstr "Звіт складських правил"
 
 #. module: sale_stock
 #: model:ir.model,name:sale_stock.model_report_stock_report_stock_rule
 msgid "Stock rule report"
-msgstr "Звіт правила запасу"
+msgstr "Звіт складського правила"
 
 #. module: sale_stock
 #. openerp-web

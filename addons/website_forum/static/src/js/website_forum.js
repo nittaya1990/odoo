@@ -45,7 +45,7 @@ publicWidget.registry.websiteForum = publicWidget.Widget.extend({
         // welcome message action button
         var forumLogin = _.string.sprintf('%s/web?redirect=%s',
             window.location.origin,
-            escape(window.location.href)
+            encodeURIComponent(window.location.href)
         );
         $('.forum_register_url').attr('href', forumLogin);
 
@@ -88,6 +88,7 @@ publicWidget.registry.websiteForum = publicWidget.Widget.extend({
                     return {
                         query: term,
                         limit: 50,
+                        forum_id: $('#wrapwrap').data('forum_id'),
                     };
                 },
                 results: function (data) {
@@ -587,6 +588,24 @@ publicWidget.registry.websiteForumSpam = publicWidget.Widget.extend({
         }).then(function () {
             window.location.reload();
         });
+    },
+});
+
+publicWidget.registry.WebsiteForumBackButton = publicWidget.Widget.extend({
+    selector: '.o_back_button',
+    events: {
+        'click': '_onBackButtonClick',
+    },
+
+    //--------------------------------------------------------------------------
+    // Handlers
+    //--------------------------------------------------------------------------
+
+    /**
+     * @private
+     */
+    _onBackButtonClick() {
+        window.history.back();
     },
 });
 

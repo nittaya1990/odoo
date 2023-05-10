@@ -3,7 +3,6 @@
 # 	* crm
 # 
 # Translators:
-# Tadeusz Karpiński <tadeuszkarpinski@gmail.com>, 2020
 # Jaroslaw Kaczmarski, 2020
 # Mariusz, 2020
 # Grzegorz Krukar <grzegorzgk1@gmail.com>, 2020
@@ -19,13 +18,15 @@
 # Marcin Młynarczyk <mlynarczyk@gmail.com>, 2020
 # Maciej Wichowski <maciej.wichowski@openglobe.pl>, 2020
 # Karol Rybak <karolrybak85@gmail.com>, 2020
-# Andrzej Donczew <a.donczew@hadron.eu.com>, 2020
+# Andrzej Wiśniewski <a.wisniewski@hadron.eu.com>, 2020
 # Paweł Wodyński <pw@myodoo.pl>, 2020
 # Maja Stawicka <mjstwck@wp.pl>, 2020
-# Maksym <ms@myodoo.pl>, 2020
 # Natalia Gros <nag@odoo.com>, 2020
 # Piotr Strębski <strebski@gmail.com>, 2021
 # Wojciech Warczakowski <w.warczakowski@gmail.com>, 2021
+# Rafał Kozak <rafal.kozak@openglobe.pl>, 2021
+# Maksym <ms@myodoo.pl>, 2023
+# Tadeusz Karpiński <tadeuszkarpinski@gmail.com>, 2023
 # 
 msgid ""
 msgstr ""
@@ -33,8 +34,8 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-11-27 14:12+0000\n"
 "PO-Revision-Date: 2020-09-07 08:11+0000\n"
-"Last-Translator: Wojciech Warczakowski <w.warczakowski@gmail.com>, 2021\n"
-"Language-Team: Polish (https://www.transifex.com/odoo/teams/41243/pl/)\n"
+"Last-Translator: Tadeusz Karpiński <tadeuszkarpinski@gmail.com>, 2023\n"
+"Language-Team: Polish (https://app.transifex.com/odoo/teams/41243/pl/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
@@ -494,7 +495,7 @@ msgstr "Data przypisania"
 #: model:ir.model.fields,field_description:crm.field_crm_lead2opportunity_partner__lead_id
 #: model:ir.model.fields,field_description:crm.field_crm_lead2opportunity_partner_mass__lead_id
 msgid "Associated Lead"
-msgstr ""
+msgstr "Powiązany lead"
 
 #. module: crm
 #: model:ir.model.fields,field_description:crm.field_crm_lead__message_attachment_count
@@ -710,7 +711,7 @@ msgstr ""
 #. module: crm
 #: model_terms:ir.ui.view,arch_db:crm.res_config_settings_view_form
 msgid "Consider leads created as of the"
-msgstr "Rozważ potencjalne szanse utworzone "
+msgstr "Rozważ sygnały utworzone "
 
 #. module: crm
 #: model:ir.model,name:crm.model_res_partner
@@ -849,7 +850,7 @@ msgstr "Utwórz nowego klienta"
 #: model_terms:ir.actions.act_window,help:crm.crm_case_form_view_salesteams_opportunity
 #, python-format
 msgid "Create a new lead"
-msgstr "Utwórz nową szansę"
+msgstr "Utwórz nowy sygnał"
 
 #. module: crm
 #: code:addons/crm/models/crm_lead.py:0
@@ -914,7 +915,7 @@ msgstr "Waluta"
 #. module: crm
 #: model:ir.model.fields,field_description:crm.field_crm_team__alias_bounced_content
 msgid "Custom Bounced Message"
-msgstr ""
+msgstr "Niestandardowa wiadomość o odbiorze"
 
 #. module: crm
 #: code:addons/crm/models/crm_lead.py:0
@@ -1189,7 +1190,7 @@ msgstr "Spodziewane zamknięcie"
 #: model:ir.model.fields,field_description:crm.field_crm_lead__recurring_revenue_monthly
 #: model_terms:ir.ui.view,arch_db:crm.crm_case_tree_view_oppor
 msgid "Expected MRR"
-msgstr ""
+msgstr "Przewidywany MPC (Miesięczny Przychód Cyklilczny)"
 
 #. module: crm
 #: model:ir.model.fields,field_description:crm.field_crm_lead__expected_revenue
@@ -1237,6 +1238,8 @@ msgid ""
 "Field used to store sanitized phone number. Helps speeding up searches and "
 "comparisons."
 msgstr ""
+"Pole służące do przechowywania oczyszczonego numeru telefonu. Pomaga "
+"przyspieszyć wyszukiwanie i porównywanie."
 
 #. module: crm
 #: model:ir.model,name:crm.model_crm_lead_scoring_frequency_field
@@ -1316,7 +1319,8 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:crm.res_config_settings_view_form
 msgid "Generate new leads based on their country, industry, size, etc."
 msgstr ""
-"Wygeneruj potencjalne szanse bazując na ich kraju, sektorze, rozmiarze itp."
+"Wygeneruj potencjalne sygnały bazując na ich kraju, sektorze, rozmiarze, "
+"itp."
 
 #. module: crm
 #: model:ir.model,name:crm.model_crm_lead_lost
@@ -1418,6 +1422,8 @@ msgid ""
 "If set, this Sales Team will be used for sales and assignments related to "
 "this partner"
 msgstr ""
+"Jeśli ustawiony, ten zespół sprzedaży będzie używany do sprzedaży i zleceń "
+"związanych z tym partnerem."
 
 #. module: crm
 #: model:ir.model.fields,help:crm.field_crm_team__alias_bounced_content
@@ -1425,6 +1431,8 @@ msgid ""
 "If set, this content will automatically be sent out to unauthorized users "
 "instead of the default message."
 msgstr ""
+"Jeżeli ustawione, ta treść będzie wysyłana automatycznie do "
+"nieautoryzowanych użytkowników zamiast wiadomości domyślnej."
 
 #. module: crm
 #: model:ir.model.fields,help:crm.field_crm_lead__is_blacklisted
@@ -1442,6 +1450,8 @@ msgid ""
 "If the sanitized phone number is on the blacklist, the contact won't receive"
 " mass mailing sms anymore, from any list"
 msgstr ""
+"Jeśli oczyszczony numer telefonu znajduje się na czarnej liście, kontakt nie"
+" będzie już otrzymywał masowych wiadomości sms z żadnej listy."
 
 #. module: crm
 #: model:ir.ui.menu,name:crm.menu_import_crm
@@ -1477,6 +1487,9 @@ msgid ""
 "distinguish which number is blacklisted             when there is both a "
 "mobile and phone field in a model."
 msgstr ""
+"Wskazuje, czy wpisany na czarną listę numer telefonu jest numerem "
+"komórkowym. Pomaga odróżnić, który numer jest na czarnej liście, gdy w "
+"modelu jest zarówno pole telefonu jak i komórki."
 
 #. module: crm
 #: model:ir.model.fields,help:crm.field_crm_lead__phone_blacklisted
@@ -1485,6 +1498,9 @@ msgid ""
 "distinguish which number is blacklisted             when there is both a "
 "mobile and phone field in a model."
 msgstr ""
+"Wskazuje, czy wpisany na czarną listę oczyszczony numer telefonu jest "
+"numerem telefonu. Pomaga odróżnić, który numer jest na czarnej liście, gdy w"
+" modelu jest zarówno pole telefonu jak i komórki."
 
 #. module: crm
 #: model_terms:ir.ui.view,arch_db:crm.crm_lead_view_form
@@ -1499,7 +1515,7 @@ msgstr "Jest obserwatorem"
 #. module: crm
 #: model:ir.model.fields,field_description:crm.field_crm_stage__is_won
 msgid "Is Won Stage?"
-msgstr ""
+msgstr "Czy to finalny etap?"
 
 #. module: crm
 #: model:ir.model.fields,field_description:crm.field_crm_lead__is_automated_probability
@@ -1615,12 +1631,12 @@ msgstr "Sygnał"
 #. module: crm
 #: model_terms:ir.ui.view,arch_db:crm.res_config_settings_view_form
 msgid "Lead Enrichment"
-msgstr ""
+msgstr "Wzbogacanie sygnałów"
 
 #. module: crm
 #: model_terms:ir.ui.view,arch_db:crm.res_config_settings_view_form
 msgid "Lead Generation"
-msgstr "Generacja potencjalnych szans"
+msgstr "Generacja potencjalnych sygnałów"
 
 #. module: crm
 #: model_terms:ir.ui.view,arch_db:crm.res_config_settings_view_form
@@ -1666,7 +1682,7 @@ msgstr "Sygnały/Szanse"
 #. module: crm
 #: model:mail.message.subtype,description:crm.mt_lead_create
 msgid "Lead/Opportunity created"
-msgstr ""
+msgstr "Utworzono Sygnał/Szansa"
 
 #. module: crm
 #: code:addons/crm/models/crm_lost_reason.py:0
@@ -1707,7 +1723,7 @@ msgstr ""
 #. module: crm
 #: model:ir.model.fields,field_description:crm.field_crm_lost_reason__leads_count
 msgid "Leads Count"
-msgstr "Ilość szans"
+msgstr "Ilość sygnałów"
 
 #. module: crm
 #: model_terms:ir.ui.view,arch_db:crm.crm_case_calendar_view_leads
@@ -1992,7 +2008,7 @@ msgstr ""
 #. module: crm
 #: model_terms:ir.ui.view,arch_db:crm.crm_case_tree_view_oppor
 msgid "My Deadline"
-msgstr ""
+msgstr "Mój termin"
 
 #. module: crm
 #: model_terms:ir.ui.view,arch_db:crm.view_crm_case_leads_filter
@@ -2113,7 +2129,7 @@ msgstr "Liczba błędów"
 #. module: crm
 #: model:ir.model.fields,help:crm.field_crm_team__lead_all_assigned_month_count
 msgid "Number of leads and opportunities assigned this last month."
-msgstr "Liczba sygnałów i możliwości przypisanych w zeszłym miesiącu."
+msgstr "Liczba sygnałów i szans przypisanych w zeszłym miesiącu."
 
 #. module: crm
 #: model:ir.model.fields,help:crm.field_crm_lead__message_needaction_counter
@@ -2280,7 +2296,7 @@ msgstr "Szansa utracona"
 #. module: crm
 #: model:mail.message.subtype,description:crm.mt_lead_restored
 msgid "Opportunity restored"
-msgstr ""
+msgstr "Szansa przywrócona"
 
 #. module: crm
 #: model:mail.message.subtype,description:crm.mt_lead_won
@@ -2301,7 +2317,7 @@ msgstr ""
 #. module: crm
 #: model_terms:ir.ui.view,arch_db:crm.quick_create_opportunity_form
 msgid "Organization / Contact"
-msgstr ""
+msgstr "Organizacja/kontakt"
 
 #. module: crm
 #: model_terms:ir.ui.view,arch_db:crm.res_config_settings_view_form
@@ -2311,12 +2327,12 @@ msgstr "Rozszerzenie Outlook CRM"
 #. module: crm
 #: model:crm.recurring.plan,name:crm.crm_recurring_plan_over_3_years
 msgid "Over 3 years"
-msgstr ""
+msgstr "Powyżej 3 lat"
 
 #. module: crm
 #: model:crm.recurring.plan,name:crm.crm_recurring_plan_over_5_years
 msgid "Over 5 years "
-msgstr ""
+msgstr "Powyżej 5 lat"
 
 #. module: crm
 #: model:ir.actions.act_window,name:crm.crm_lead_action_team_overdue_opportunity
@@ -2375,7 +2391,7 @@ msgstr "Telefon"
 #. module: crm
 #: model:ir.model.fields,field_description:crm.field_crm_lead__phone_sanitized_blacklisted
 msgid "Phone Blacklisted"
-msgstr ""
+msgstr "Numer na czarnej liście"
 
 #. module: crm
 #: model:crm.lead.scoring.frequency.field,name:crm.frequency_field_phone_state
@@ -2480,7 +2496,7 @@ msgstr "Propozycja"
 #. module: crm
 #: model:ir.model.fields,field_description:crm.field_crm_lead__recurring_revenue_monthly_prorated
 msgid "Prorated MRR"
-msgstr ""
+msgstr "Proporcjonalny MPC (Miesięczny Przychód Cyklilczny)"
 
 #. module: crm
 #: model:ir.model.fields,field_description:crm.field_crm_lead__prorated_revenue
@@ -2527,7 +2543,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:crm.field_crm_lead__recurring_revenue
 #: model:ir.model.fields,field_description:crm.field_res_config_settings__group_use_recurring_revenues
 msgid "Recurring Revenues"
-msgstr ""
+msgstr "Przychody cykliczne"
 
 #. module: crm
 #: model:ir.model.fields,field_description:crm.field_crm_lead__referred
@@ -2626,7 +2642,7 @@ msgstr "Sprzedawcy"
 #. module: crm
 #: model:ir.model.fields,field_description:crm.field_crm_lead__phone_sanitized
 msgid "Sanitized Number"
-msgstr ""
+msgstr "Oczyszczony numer"
 
 #. module: crm
 #: model_terms:ir.ui.view,arch_db:crm.view_crm_case_leads_filter
@@ -2683,12 +2699,12 @@ msgstr "Ustawienia"
 #. module: crm
 #: model:res.groups,name:crm.group_use_lead
 msgid "Show Lead Menu"
-msgstr "Pokaż menu Sygnałów - potencjalnych klientów "
+msgstr "Pokaż menu Sygnałów"
 
 #. module: crm
 #: model:res.groups,name:crm.group_use_recurring_revenues
 msgid "Show Recurring Revenues Menu"
-msgstr ""
+msgstr "Pokaż Menu Przychodów Cyklicznych"
 
 #. module: crm
 #: model_terms:ir.ui.view,arch_db:crm.view_crm_case_leads_filter
@@ -2703,7 +2719,7 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:crm.crm_activity_report_view_search
 #: model_terms:ir.ui.view,arch_db:crm.crm_opportunity_report_view_search
 msgid "Show only lead"
-msgstr "Pokaż tylko sygnały"
+msgstr "Pokaż tylko sygnał"
 
 #. module: crm
 #: model_terms:ir.ui.view,arch_db:crm.crm_activity_report_view_search
@@ -2714,7 +2730,7 @@ msgstr "Pokaż tylko szanse"
 #. module: crm
 #: model_terms:ir.ui.view,arch_db:crm.crm_lead_view_list_activities
 msgid "Snooze 7d"
-msgstr ""
+msgstr "drzemka 7 dni lub przełóż o 7 dni"
 
 #. module: crm
 #: model_terms:ir.actions.act_window,help:crm.crm_lost_reason_action
@@ -2847,7 +2863,7 @@ msgstr "Podtyp"
 #. module: crm
 #: model:ir.model,name:crm.model_ir_config_parameter
 msgid "System Parameter"
-msgstr ""
+msgstr "Parametr systemu"
 
 #. module: crm
 #: model_terms:ir.ui.view,arch_db:crm.view_crm_case_leads_filter
@@ -2962,6 +2978,8 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:crm.crm_lead_view_form
 msgid "This email is blacklisted for mass mailings. Click to unblacklist."
 msgstr ""
+"Ten email znajduje się na czarnej liście dla masowej wysyłki. Kliknij, aby "
+"odblokować."
 
 #. module: crm
 #: model:ir.model.fields,help:crm.field_crm_lead__email_normalized
@@ -3176,7 +3194,7 @@ msgid ""
 "                    a contact form filled in your website, or a file of unqualified\n"
 "                    prospects you import, etc."
 msgstr ""
-"Użyj potencjalnych klientów, jeśli potrzebujesz kroku kwalifikacyjnego przed stworzeniem\n"
+"Użyj sygnałów, jeśli potrzebujesz kroku kwalifikacyjnego przed stworzeniem\n"
 "                    szansy lub klienta. Może to być wizytówka, którą otrzymałeś,\n"
 "                    formularz kontaktowy wypełniony w Twojej witrynie lub plik o nieokreślonych\n"
 "                    perspektywach, które importujesz itp."

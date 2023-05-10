@@ -10,6 +10,7 @@
 # Martin Trigaux, 2020
 # JH CHOI <hwangtog@gmail.com>, 2021
 # Linkup <link-up@naver.com>, 2021
+# Sarah Park, 2022
 # 
 msgid ""
 msgstr ""
@@ -17,8 +18,8 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-11-27 14:12+0000\n"
 "PO-Revision-Date: 2020-09-07 08:16+0000\n"
-"Last-Translator: Linkup <link-up@naver.com>, 2021\n"
-"Language-Team: Korean (https://www.transifex.com/odoo/teams/41243/ko/)\n"
+"Last-Translator: Sarah Park, 2022\n"
+"Language-Team: Korean (https://app.transifex.com/odoo/teams/41243/ko/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
@@ -755,12 +756,12 @@ msgstr "공급업체 가격표를 정의하십시오."
 #. module: product
 #: model_terms:ir.ui.view,arch_db:product.res_config_settings_view_form
 msgid "Define your volume unit of measure"
-msgstr ""
+msgstr "부피 측정 단위를 선택하세요"
 
 #. module: product
 #: model_terms:ir.ui.view,arch_db:product.res_config_settings_view_form
 msgid "Define your weight unit of measure"
-msgstr ""
+msgstr "무게 측정 단위를 선택하세요"
 
 #. module: product
 #: model:ir.model.fields,field_description:product.field_product_supplierinfo__delay
@@ -1165,14 +1166,10 @@ msgstr "공급업체 가격표 서식 가져오기"
 #: model:ir.model.fields,help:product.field_product_template__standard_price
 msgid ""
 "In Standard Price & AVCO: value of the product (automatically computed in AVCO).\n"
-"        In FIFO: value of the last unit that left the stock (automatically computed).\n"
+"        In FIFO: value of the next unit that will leave the stock (automatically computed).\n"
 "        Used to value the product when the purchase cost is not known (e.g. inventory adjustment).\n"
 "        Used to compute margins on sale orders."
 msgstr ""
-"표준 가격 및 AVCO : 품목가치(AVCO에서 자동 계산). \n"
-"           FIFO에서 : 재고를 남긴 마지막 단위의 값(자동 계산). \n"
-"          구매 비용을 알 수 없을 때 품목의 가치를 평가하는 데 사용됩니다 (예 : 재고 조정). \n"
-"           판매 주문의 마진을 계산하는 데 사용됩니다."
 
 #. module: product
 #: model_terms:ir.ui.view,arch_db:product.product_template_attribute_value_view_search
@@ -2185,9 +2182,9 @@ msgstr "이 규칙이 하나의 품목 양식에만 적용되는 경우 양식�
 #. module: product
 #: model:ir.model.fields,help:product.field_product_pricelist_item__price_surcharge
 msgid ""
-"Specify the fixed amount to add or substract(if negative) to the amount "
+"Specify the fixed amount to add or subtract(if negative) to the amount "
 "calculated with the discount."
-msgstr "할인으로 계산된 금액에 더하거나 빼기(고정된 경우)할 고정 금액을 지정하십시오."
+msgstr ""
 
 #. module: product
 #: model:ir.model.fields,help:product.field_product_pricelist_item__price_max_margin
@@ -2339,6 +2336,12 @@ msgid "The product template is archived so no combination is possible."
 msgstr "품목 양식이 보관되어 있어서 조합할 수 없습니다."
 
 #. module: product
+#: code:addons/product/models/product.py:0
+#, python-format
+msgid "The product variant must be a variant of the product template."
+msgstr ""
+
+#. module: product
 #: model:ir.model.fields,help:product.field_product_supplierinfo__min_qty
 msgid ""
 "The quantity to purchase from this vendor to benefit from the price, "
@@ -2382,6 +2385,15 @@ msgstr "남아있는 가능한 조합이 없습니다."
 #: model:ir.model.fields,help:product.field_product_supplierinfo__product_uom
 msgid "This comes from the product form."
 msgstr "이것은 품목 양식에서 비롯됩니다."
+
+#. module: product
+#: code:addons/product/models/product_template.py:0
+#, python-format
+msgid ""
+"This configuration of product attributes, values, and exclusions would lead "
+"to no possible variant. Please archive or delete your product directly if "
+"intended."
+msgstr ""
 
 #. module: product
 #: model:ir.model.fields,help:product.field_product_product__price_extra
@@ -2872,10 +2884,15 @@ msgstr ""
 #, python-format
 msgid ""
 "You cannot delete the value %s because it is used on the following products:\n"
-"%s"
+"%s\n"
+"If the value has been associated to a product in the past, you will not be able to delete it."
 msgstr ""
-"%s 값이 다음 품목에 사용되기 때문에 삭제할 수 없습니다 :\n"
-"%s"
+
+#. module: product
+#: code:addons/product/models/product_attribute.py:0
+#, python-format
+msgid "You cannot delete value %s because it was used in some products."
+msgstr ""
 
 #. module: product
 #: code:addons/product/models/product_pricelist.py:0
@@ -2898,6 +2915,14 @@ msgstr "이 품목 카테고리는 일반적인 기본 카테고리이므로 삭
 msgid ""
 "You cannot move the attribute %s from the product %s to the product %s."
 msgstr "%s 사양을 %s 품목에서 %s 품목으로 이동할 수 없습니다."
+
+#. module: product
+#: code:addons/product/models/product_pricelist.py:0
+#, python-format
+msgid ""
+"You cannot disable a pricelist rule, please delete it or archive its "
+"pricelist instead."
+msgstr ""
 
 #. module: product
 #: code:addons/product/models/product_attribute.py:0
